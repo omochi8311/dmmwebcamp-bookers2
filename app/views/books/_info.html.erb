@@ -1,7 +1,8 @@
 <h2>User info</h2>
 <p><%= image_tag current_user.get_profile_image %></p>
+
 <h2>New book</h2>
-<%= form_with model: @book do |f| %>
+<%= form_with model: books do |f| %>
  <h4>Title</h4>
  <%= f.text_field :title %>
 
@@ -14,6 +15,6 @@
 
 <h2>Book detail</h2>
 
-<% @books.each do |book| %>
+<% books.each do |book| %>
 
 <% end %>
