@@ -11,10 +11,18 @@
     <tr>
   </thead>
 </table>
-
-<% @users.each do |user| %>
+<tbody>
+ <tr>
+   <td>
+    <% @users.each do |user| %>
+   </td>
+   <td><%= image_tag current_user.get_profile_image %></td>
+   <td><%= user.name %></td>
+   <td><%= link_to "show", users_path(@user) %></td>
+  </tr>
+</tbody>
 <div>
-<p><%= user.name %></p>
-<p><%= user.introduction %></p>
+
 </div>
+
 <% end %>
