@@ -11,9 +11,21 @@
  <p><%= f.submit 'Create Book' %></p>
 <% end %>
 
-
-<h2>Book detail</h2>
-
-<% @books.each do |book| %>
-
-<% end %>
+<h2>Books</h2>
+ <table class="table table-hover table-inverse">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+   <% @books.each do |book| %></p>
+    <td><%= image_tag current_user.get_profile_image %></td>
+    <td><%= link_to book.title, "/books/#{book.id}" %></td>
+    <td><%= book.body %></td>
+   <% end %>
+  </tbody>
+ </table>
