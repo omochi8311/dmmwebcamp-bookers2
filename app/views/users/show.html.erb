@@ -1,8 +1,22 @@
 <%= render 'users/info', user: @user %>
 <%= render 'books/newbook', books: @book %>
 
-<h2>Book detail</h2>
-
-<% @books.each do |book| %>
-
-<% end %>
+<h2>Books</h2>
+<table class="table table-hover table-inverse">
+  <thead>
+    <tr>
+     <th></th>
+     <th>Title</th>
+     <th>Opinion</th>
+     <th colspan="3"></th>
+    </tr>
+  </thead>
+ <div>
+     <% @books.each do |book| %>
+    <th><%= image_tag book.user.get_profile_image, size:'50×50' %></th>
+    <th><%= link_to book.title, "/books/#{book.id}" %></th>
+    <th><%= book.body %></th>
+     <% end %>
+ </div>
+  <tbody></tbody>
+</table>
