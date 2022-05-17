@@ -22,10 +22,12 @@
     </tr>
   </thead>
   <tbody>
-   <% @books.each do |book| %></p>
+   <p><% @books.each do |book| %></p>
+   <tr>
     <td><%= image_tag current_user.get_profile_image %></td>
     <td><%= link_to book.title, "/books/#{book.id}" %></td>
     <td><%= book.body %></td>
+   </tr>
    <% end %>
   </tbody>
  </table>
