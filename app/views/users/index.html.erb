@@ -14,7 +14,9 @@
 <tbody>
  <tr>
    <td>
+    <table class="table table-striped">
     <% @users.each do |user| %>
+    </table>
    </td>
    <td><%= image_tag current_user.get_profile_image %></td>
    <td><%= user.name %></td>
