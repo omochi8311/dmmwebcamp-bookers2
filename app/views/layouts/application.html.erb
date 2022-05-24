@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -19,17 +18,29 @@
           <div class="navbar-collapse collapse show" id="navbarNavDropdown" style>
             <ul class="navbar-nav ml-auto">
               <li>
-                <%= link_to "Home",root_path, class: "nav-link text-light" %>
+                <%= link_to root_path, class: "nav-link text-light" do %>
+                 <i class="fas fa-home"></i>Home
+                <% end %>
               </li>
+
               <li>
-                <%= link_to "About",homes_about_path, class: "nav-link text-ligth" %>
-              </li>
+               <%= link_to homes_about_path, class: "nav-link text-light" do %>
+                 <i class="fas fa-users"></i>About
+               <% end %>
+　　　　　　　</li>
+
               <li>
-                <%= link_to "Sign up",new_user_registration_path, class: "nav-link text-light" %>
+                <%= link_to new_user_registration_path, class: "nav-link text-light" do %>
+                 <i class="fas fa-book-open"></i>Sign up
+                <% end %>
               </li>
+
               <li>
-                <%= link_to "Log in",new_user_session_path, class: "nav-link text-light" %>
+                <%= link_to new_user_session_path, class: "nav-link text-light" do %>
+                 <i class="fas fa-sign-out-alt"></i>Log in
+                <% end %>
               </li>
+
             </ul>
           </div>
         </div>
@@ -45,6 +56,9 @@
        </li>
       <% end %>
     </header>
+     <div class ="row">
+      <%= flash[:notice] %>
+    </div>
     <%= yield %>
    <footer>
     <div class="container mt-5">
