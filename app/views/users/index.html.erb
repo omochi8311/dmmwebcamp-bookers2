@@ -6,22 +6,22 @@
 <%= render 'books/newbook', books: @book %>
  </div>
 <div class="col-md-8 offset-md-1">
-<h2>Users</h2>
-<table class="table">
-  <thead>
+ <h2>Users</h2>
+  <table class="table">
+   <thead>
     <tr>
       <th>image</th>
       <th>name</th>
       <th colspan='3'></th>
     <tr>
-  </thead>
- <tbody>
- <tr>
+   </thead>
+  <tbody>
+   <tr>
     <% @users.each do |user| %>
    <td><%= image_tag current_user.get_profile_image %></td>
    <td><%= user.name %></td>
    <td><%= link_to "show", user_path(user.id) %></td>
-  </tr>
+   </tr>
   <% end %>
 </table>
 </tbody>
