@@ -1,3 +1,4 @@
+<body>
 <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
 <h2>User info</h2>
   <% if @user.errors.any? %>
@@ -21,10 +22,11 @@
   </p>
   <label for="user_introduction">Introduction</label>
   <p>
-    <%= f.text_area :body,class: "form-control" %>
+    <%= f.text_area :introduction,class: "form-control" %>
   </p>
   <p>
     <%= f.submit "Update User",class: "btn btn-secondary" %>
   </p>
 <% end %>
 </div>
+</body>
