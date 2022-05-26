@@ -3,33 +3,33 @@
   <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
    <h1>Editing Book</h1>
     <% if @book.errors.any? %>
-    <h3>
-    <%= @book.errors.count %>error prohibited this obj from being saved:
-    </h3>
-    <ul>
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+     <h3>
+      <%= @book.errors.count %>error prohibited this obj from being saved:
+     </h3>
+      <ul>
+       <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
     <% end %>
-    </ul>
-<% end %>
-<%= form_with model: @book, url: book_path(@book.id), method: :patch do |f| %>
-<div class="form-group">
+      </ul>
+    <% end %>
 
- <lable for="book_title">Title</lable><br>
-  <%= f.text_field :title,class: "form-control" %>
-</div>
-<div class="form-group">
- <lable for="book_body">Opinion</lable><br>
-  <%= f.text_area :body,class: "form-control" %>
-</div>
+    <%= form_with model: @book, url: book_path(@book.id), method: :patch do |f| %>
+      <div class="form-group">
 
-<%= f.submit "Update Book",class: "btn btn-success" %>
-<p>
-<th><%= link_to "Show",book_path %></th>
-|
-<th><%= link_to "Back",books_path %></th>
+        <lable for="book_title">Title</lable><br>
+         <%= f.text_field :title,class: "form-control" %>
+      </div>
+       <div class="form-group">
+        <lable for="book_body">Opinion</lable><br>
+         <%= f.text_area :body,class: "form-control" %>
+       </div>
 
-<% end %>
+          <%= f.submit "Update Book",class: "btn btn-success" %>
+           <th><%= link_to "Show",book_path %></th>
+              |
+           <th><%= link_to "Back",books_path %></th>
+
+    <% end %>
 
   </div>
  </div>
