@@ -1,20 +1,19 @@
-
-      <h2>User info</h2>
-       <p><%= image_tag user.get_profile_image %></p>
-      <table class="table">
+<h2>User info</h2>
+  <p><%= image_tag user.get_profile_image %></p>
+    <table class="table">
       <tbody>
         <tr>
-      <th>name</th>
-      <th><%= user.name %></th>
+          <th>name</th>
+          <th><%= user.name %></th>
         </tr>
         <tr>
-      <th>introduction</th>
-      <th><%= user.introduction %></th>
+          <th>introduction</th>
+          <th><%= user.introduction %></th>
         </tr>
       </tbody>
     </table>
-        <p>
-          <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block" do %>
-           <i class="fas fa-user-cog"></i>
-          <% end %>
-        </p>
+  <p>
+    <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block" do %>
+    <i class="fas fa-user-cog"></i>
+    <% end %>
+  </p>
